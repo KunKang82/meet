@@ -1,12 +1,12 @@
 # meet
 
-#Description
+## Description
 Meet is a serverless, progressive web application (PWA) using React with a test-driven development technique. The application uses the Google Calendar API to fetch upcoming events in a city.
 
-#Technologies used
+## Technologies used
 Javacript, React, Creat-React-App
 
-#Dependencies
+## Dependencies
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -29,7 +29,7 @@ Javacript, React, Creat-React-App
   "devDependencies"
     "gh-pages": "^5.0.0" 
 
-#Features, User Stories and BDD Scenarios
+## Features, User Stories and BDD Scenarios
 FEATURE 1: FILTER EVENTS BY CITY 
 User story: As a user, I should be able to filter events by city so that I can see the events that take place in that city. 
 
