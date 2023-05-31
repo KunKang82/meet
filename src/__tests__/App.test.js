@@ -9,13 +9,14 @@ import NumberOfEvents from '../NumberOfEvents';
 import { mockData } from '../mock-data';
 import { extractLocations, getEvents } from '../api';
 
+//unit tests
 describe('<App /> component', () => {
   let AppWrapper;
   beforeAll(() => {
     AppWrapper = shallow(<App />);
   });
 
-  test('render list of events', () => {
+  test('render list of events', () => { 
     expect(AppWrapper.find(EventList)).toHaveLength(1);
   });
 
@@ -28,6 +29,7 @@ describe('<App /> component', () => {
   });
 });
 
+//integration tests
 describe('<App /> integration', () => {
   test('App passes "events" state as a prop to EventList', () => {
     const AppWrapper = mount(<App />);
@@ -69,5 +71,23 @@ describe('<App /> integration', () => {
     AppWrapper.unmount();
   });
 
+  //integration testing for NumberOfEvents
+  test('App passes "numberOfEvents" state as a prop to NumberOfEvents', () => {
+    const AppWrapper = mount(<App />);
+    const AppEventCountState = AppWrapper.state('numberOfEvents');
+    expect(AppEventCountState).not.toEqual(undefined);
+    AppWrapper.setState({ numberOfEvents: 10 });
+    expect(AppWrapper.find(NumberOfEvents).props().numberOfEvents).toBe(AppWrapper.state('numberOfEvents'));
+    AppWrapper.unmount();
+  });
+
+  test('Filtered list of events matches mock data', async () => {
+    const AppWrapper = mount(<App />);
+    const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
+    NumberOfEventsWrapper.find('.number').simulate('change', {target: { value: 10 },});
+    await getEvents();
+    expect(AppWrapper.state('events')).toEqual(mockData.slice(0, 10));
+    AppWrapper.unmount();
+  });
 });
 

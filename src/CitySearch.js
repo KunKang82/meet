@@ -27,6 +27,7 @@ class CitySearch extends Component {
     });
 
     this.props.updateEvents(suggestion);
+    // this.props.updateEvents(suggestion, undefined);
   }
 
   render() {
