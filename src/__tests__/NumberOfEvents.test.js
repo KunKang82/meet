@@ -29,7 +29,7 @@ describe('<NumberOfEvents /> component', () => {
 
    /* tests if NumberOfEvents component contains a div */
   test('render label', () => {
-    expect(NumberOfEventsWrapper.find('.numberOfEvents')).toHaveLength(1);
+    expect(NumberOfEventsWrapper.find('.NumberOfEvents')).toHaveLength(1);
   });
 
  /* test change of state when number input changes */
