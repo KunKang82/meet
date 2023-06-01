@@ -12,7 +12,7 @@ class Event extends Component {
   render() {
     const { event } = this.props;
     return (
-      <div className="event-card">
+      <div className="event">
         <h5 className="event-title">{event.summary}</h5>
         <p className="event-info">
           {event.location} {event.start.dateTime} {event.start.timeZone}

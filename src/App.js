@@ -29,6 +29,12 @@ class App extends Component {
     this.mounted = false;
   }
 
+  // updateNumberOfEvents(number) {
+  //   this.setState({
+  //     numberOfEvents: number,
+  //   });
+  // }
+
   // updateEvents = (location, eventCount) => {
   //   if (eventCount === undefined) {
   //     eventCount = this.state.numberOfEvents;
