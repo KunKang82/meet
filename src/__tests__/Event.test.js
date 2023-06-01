@@ -22,12 +22,8 @@ describe('<Event /> component', () => {
 
   test('event info renders correctly', () => {
     expect(EventWrapper.find('.event-info').text()).toContain(event.location);
-    expect(EventWrapper.find('.event-info').text()).toContain(
-      event.start.dateTime
-    );
-    expect(EventWrapper.find('.event-info').text()).toContain(
-      event.start.timeZone
-    );
+    expect(EventWrapper.find('.event-info').text()).toContain(event.start.dateTime);
+    expect(EventWrapper.find('.event-info').text()).toContain(event.start.timeZone);
   });
 
   test('render show details button', () => {
