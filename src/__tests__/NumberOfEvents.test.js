@@ -18,7 +18,7 @@ describe('<NumberOfEvents /> component', () => {
   /* checks the value prop of element with class number is equal to
   * NumberOfEvents integer state */
   test('renders text input correctly', () => {
-    const numberOfEvents = NumberOfEventsWrapper.state('numberOfEvents');
+    const numberOfEvents = NumberOfEventsWrapper.state('NumberOfEvents');
     expect(NumberOfEventsWrapper.find('.number').prop('value')).toBe(numberOfEvents);
   });
 
@@ -39,6 +39,6 @@ describe('<NumberOfEvents /> component', () => {
   });
   const eventObject = { target: { value: 2 }};
   NumberOfEventsWrapper.find('.number').simulate('change', eventObject);
-  expect(NumberOfEventsWrapper.state('numberOfEvents')).toBe(2);
+  expect(NumberOfEventsWrapper.state('NumberOfEvents')).toBe(2);
   });
 });
