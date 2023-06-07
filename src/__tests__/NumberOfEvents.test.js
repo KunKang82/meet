@@ -12,24 +12,24 @@ describe('<NumberOfEvents /> component', () => {
 
   /* tests if NumberOfEvents component contains a textbox */
   test('render text input', () => {
-    expect(NumberOfEventsWrapper.find('.number')).toHaveLength(1);
+    expect(NumberOfEventsWrapper.find('.eventNumberInput')).toHaveLength(1);
   });
 
   /* checks the value prop of element with class number is equal to
   * NumberOfEvents integer state */
   test('renders text input correctly', () => {
-    const numberOfEvents = NumberOfEventsWrapper.state('NumberOfEvents');
-    expect(NumberOfEventsWrapper.find('.number').prop('value')).toBe(numberOfEvents);
+    const numberOfEvents = NumberOfEventsWrapper.state('numberOfEvents');
+    expect(NumberOfEventsWrapper.find('.eventNumberInput').prop('value')).toBe(numberOfEvents);
   });
 
   // tests if the default number of events shown is 32
   test('render default number in the input is 32', () => {
-    expect(NumberOfEventsWrapper.find('.number').prop('value')).toBe(32);
+    expect(NumberOfEventsWrapper.find('.eventNumberInput').prop('value')).toBe(32);
   });
 
    /* tests if NumberOfEvents component contains a div */
   test('render label', () => {
-    expect(NumberOfEventsWrapper.find('.NumberOfEvents')).toHaveLength(1);
+    expect(NumberOfEventsWrapper.find('.numberOfEvents')).toHaveLength(1);
   });
 
  /* test change of state when number input changes */
@@ -38,7 +38,7 @@ describe('<NumberOfEvents /> component', () => {
     numberOfEvents: 1
   });
   const eventObject = { target: { value: 2 }};
-  NumberOfEventsWrapper.find('.number').simulate('change', eventObject);
-  expect(NumberOfEventsWrapper.state('NumberOfEvents')).toBe(2);
+  NumberOfEventsWrapper.find('.eventNumberInput').simulate('change', eventObject);
+  expect(NumberOfEventsWrapper.state('numberOfEvents')).toBe(2);
   });
 });
