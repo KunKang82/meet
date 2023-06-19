@@ -63,6 +63,7 @@ class CitySearch extends Component {
         <h3>Choose your city</h3>
         <input
           type="text"
+          id="city_search"
           className="city"
           value={this.state.query}
           onChange={this.handleInputChanged}
