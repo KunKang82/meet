@@ -19,7 +19,7 @@ const EventGenre = ({ events }) => {
     // }
     useEffect(() => {
       function getData() {
-        const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
+        const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS', 'Angular'];
         const data = genres.map((genre) => {
           const value = events.filter(({ summary }) => summary.split(' ').includes(genre)).length;
           return { name: genre, value };
