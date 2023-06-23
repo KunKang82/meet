@@ -5,7 +5,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 const EventGenre = ({ events }) => {
     const [data, setData] = useState([]);
-    const colors = ['#E91E63', '#9C27B0', '#2196F3', '#4CAF50', '#FFC107'];
+    const colors = ['#E91E63', '#9C27B0', '#2196F3', '#4CAF50', '#FFC107', ];
 
     // useEffect(() => { setData(() => getData()) }, [events]);
 
@@ -19,7 +19,7 @@ const EventGenre = ({ events }) => {
     // }
     useEffect(() => {
       function getData() {
-        const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS', 'Angular'];
+        const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
         const data = genres.map((genre) => {
           const value = events.filter(({ summary }) => summary.split(' ').includes(genre)).length;
           return { name: genre, value };
