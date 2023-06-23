@@ -24,10 +24,6 @@ class NumberOfEvents extends Component {
         errorText: "Please select number from 1 to 32"
       });
     }
-    // this.setState({
-    //   numberOfEvents: value
-    // });
-    // this.props.updateEvents(undefined, value)
   }
 
   render() {
