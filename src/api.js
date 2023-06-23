@@ -11,6 +11,7 @@ import { mockData } from './mock-data';
 import axios from 'axios';
 import NProgress from 'nprogress';
 
+
 export const getAccessToken = async () => {
   const accessToken = localStorage.getItem('access_token');
   const tokenCheck = accessToken && (await checkToken(accessToken));
@@ -52,6 +53,7 @@ export const getEvents = async () => {
   if (!navigator.onLine) {
     const data = localStorage.getItem("lastEvents");
     NProgress.done();
+        
     return data?JSON.parse(data).events:[];;
   }
 
@@ -59,7 +61,8 @@ export const getEvents = async () => {
 
   if (token) {
     removeQuery();
-    const url = 'https://8o574hp0aa.execute-api.us-east-1.amazonaws.com/dev/api/get-events' + '/' + token;
+    // const url = 'https://8o574hp0aa.execute-api.us-east-1.amazonaws.com/dev/api/get-events' + '/' + token;
+    const url = `https://8o574hp0aa.execute-api.us-east-1.amazonaws.com/dev/api/get-events/${token}`;
     const result = await axios.get(url);
     if (result.data) {
       var locations = extractLocations(result.data.events);
@@ -106,7 +109,8 @@ const getToken = async (code) => {
   try {
       const encodeCode = encodeURIComponent(code);
 
-      const response = await fetch( 'https://8o574hp0aa.execute-api.us-east-1.amazonaws.com/dev/api/token' + '/' + encodeCode);
+      // const response = await fetch( 'https://8o574hp0aa.execute-api.us-east-1.amazonaws.com/dev/api/token' + '/' + encodeCode);
+      const response = await fetch(`https://8o574hp0aa.execute-api.us-east-1.amazonaws.com/dev/api/token/${encodeCode}`);
       if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
       }
