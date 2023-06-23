@@ -202,12 +202,12 @@ input[type="number"] {
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
-    display: inline;
+    display:flex;
     flex-direction: row;
   }
   .data-vis-wrapper .recharts-responsive-container {
     flex-basis: 50%;
-    max-width: 80%;
+    max-width: 50%;
     min-width: auto;
     margin: 0 auto;
   }
