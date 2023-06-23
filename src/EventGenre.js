@@ -21,7 +21,7 @@ const EventGenre = ({ events }) => {
       function getData() {
         const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
         const data = genres.map((genre) => {
-          const value = events.filter(({ summary }) => summary.split(" ").includes(genre)).length;
+          const value = events.filter(({ summary }) => summary.split(' ').includes(genre)).length;
           return { name: genre, value };
         });
         return data;
@@ -38,7 +38,7 @@ const EventGenre = ({ events }) => {
                     data={data}
                     dataKey="value"
                     nameKey="name"
-                    labelLine={false}
+                    // labelLine={false}
                     cx="50%"
                     cy="50%"
                     outerRadius={80}
